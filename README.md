@@ -1,5 +1,7 @@
 # IRMAE - WD
 
+This repo contains a demo for Implicit Rank Minimizing Autoencoder with Weight-Decay (IRMAE-WD) implemented in pytorch applied to the KSE, L=22 dataset. This repo accompanies the work outlined in the following paper: 	arXiv:2305.01090
+
 -----------------------------------------------
 
 **IRMAEWD_AE.pt**  
