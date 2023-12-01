@@ -28,19 +28,19 @@ Output of training log
 
 **TrainCurve.png**
 
-training log
+Training log
 
 -----------------------------------------------
 
 **code_musigma.p**
 
-mean and standard deviation of learned code space
+Mean and standard deviation of learned code space
 
 -----------------------------------------------
 
 **code_sValues.png**
 
-singular value spectra of the covariance of latent space z for 200 epochs (increasing epochs shows sharper drop)
+Singular value spectra of the covariance of latent space z for 200 epochs (increasing epochs shows sharper drop)
 
 -----------------------------------------------
 
@@ -52,11 +52,11 @@ SVD matrices U, S, V of the covariance of the learned latent space
 
 **err.p**
 
-training log data
+Training log data
 
 -----------------------------------------------
 
 **training_svd.p**
-singular value spectra of the covariance of z as a function of training epochs
+Singular value spectra of the covariance of z as a function of training epochs
 
 -----------------------------------------------
