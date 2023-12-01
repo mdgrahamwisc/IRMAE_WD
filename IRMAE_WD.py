@@ -8,9 +8,8 @@
                         IRMAE-WD Code
 ###############################################################################
 
-This code considers data from the Kuramoto-Sivashinsky equation (KSE), L=22. The 
-number of linear layers can be changed in the autoencoder portion and the 
-weight decay can be changed in the variable wd. 
+This script demos IRMAE-WD applied to the dataset Kuramoto-Sivashinsky equation
+(KSE), L=22 with 5 linear layers and a weigh decay value of 10**-6
 
 
 ###############################################################################
@@ -29,9 +28,9 @@ import torch.optim as optim
 import torch as T
 from torch.utils.data import DataLoader
 
-class autoencoder(nn.Module):
+class irmae_wd(nn.Module):
     def __init__(self, ambient_dim=64, code_dim=20, filepath='testae'):
-        super(autoencoder, self).__init__()
+        super(irmae_wd, self).__init__()
         
         self.ambient_dim = ambient_dim
         self.code_dim = code_dim
@@ -110,7 +109,7 @@ if __name__ == '__main__':
     
 
     #Initialize model, define loss function, set optimizer
-    model = autoencoder().to(device)
+    model = irmae_wd().to(device)
     model.double()
     loss_function = nn.MSELoss()
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=wd_param)
@@ -164,7 +163,7 @@ if __name__ == '__main__':
                 s_save = np.hstack([s_save, temp_s[:,np.newaxis]]) if s_save.size else temp_s[:,np.newaxis]
 
 
-        T.save(model.state_dict(), 'IRMAE_AE.pt')
+        T.save(model.state_dict(), 'IRMAEWD_AE.pt')
         p.dump(tot_err,open('err.p','wb'))
                 #Print Training Curve
         fig = plt.figure(num=None, figsize=(7, 7), dpi=100, facecolor='w', edgecolor='w')
@@ -175,7 +174,7 @@ if __name__ == '__main__':
         plt.savefig('TrainCurve.png')
         
     else:
-        model.load_state_dict(T.load('IRMAE_AE.pt'))
+        model.load_state_dict(T.load('IRMAEWD_AE.pt'))
         print('Testing')
         
     #Get data for plotting and computing singular values/basis vectors
