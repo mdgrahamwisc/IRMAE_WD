@@ -116,7 +116,7 @@ if __name__ == '__main__':
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=wd_param)
 
     #Load data for Kuramoto-Sivashinsky equation (KSE), L=22
-    matdata = scipy.io.loadmat('./L2210000TimeUnits.mat')
+    matdata = scipy.io.loadmat('./KSE_L22.mat')
 
     rawdata = matdata['ut']
     rawdata = rawdata[0:64,100:40000]
