@@ -162,7 +162,7 @@ if __name__ == '__main__':
                 s_save = np.hstack([s_save, temp_s[:,np.newaxis]]) if s_save.size else temp_s[:,np.newaxis]
 
 
-        T.save(model.state_dict(), 'IRMAE_AE.pt')
+        T.save(model.state_dict(), 'IRMAEWD_AE.pt')
         p.dump(tot_err,open('err.p','wb'))
                 #Print Training Curve
         fig = plt.figure(num=None, figsize=(7, 7), dpi=100, facecolor='w', edgecolor='w')
@@ -173,7 +173,7 @@ if __name__ == '__main__':
         plt.savefig('TrainCurve.png')
         
     else:
-        model.load_state_dict(T.load('IRMAE_AE.pt'))
+        model.load_state_dict(T.load('IRMAEWD_AE.pt'))
         print('Testing')
         
     #Get data for plotting and computing singular values/basis vectors
