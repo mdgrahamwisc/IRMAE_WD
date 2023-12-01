@@ -40,7 +40,7 @@ Mean and standard deviation of learned code space
 
 **code_sValues.png**
 
-Singular value spectra of the covariance of latent space z for 200 epochs (increasing epochs shows sharper drop)
+Singular value spectra of the covariance of latent space z (this is a demo for 200 epochs, increase epochs to 1000 for sharper drop)
 
 -----------------------------------------------
 
